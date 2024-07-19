@@ -3,19 +3,20 @@ namespace MissingNumber;
 
 public class FinderMissingNumber
 {
-    public static int FindNumber(int[] nums) 
+    public static List<int> FindNumber(int[] nums) 
     {
-        int maxValue = nums.Max();
-        int minValue = nums.Min();
+        var maxValue = nums.Max();
+        var minValue = nums.Min();
+        var missingNums = new List<int>();
 
         for (int i = minValue; i < maxValue; i++)
         {
             if (!nums.Contains(i))
-            {
-                return i;
+            {                 
+                missingNums.Add(i);
             }
         }
 
-        return 0;
+        return missingNums;
     }
 }

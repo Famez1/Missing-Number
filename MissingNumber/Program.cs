@@ -4,8 +4,13 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        int[] nums = { 1, 4, 3, 5, 5, 2, 7 };
+        int[] nums = { 1, 4, 3, 5, 2, 7, 9 };
 
-        Console.WriteLine(FinderMissingNumber.FindNumber(nums));
+        var missingNums = FinderMissingNumber.FindNumber(nums);
+        
+        foreach (var num in missingNums)
+        {
+            Console.WriteLine(num);
+        }
     }
 }
